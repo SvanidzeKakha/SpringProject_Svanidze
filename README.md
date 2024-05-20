@@ -135,3 +135,4 @@
 - **Метод**: POST
 - **Ендпоінт**: `/api/reviews`
 - **Параметри**: `userId`, `bookId`, `rating`, `review`
+![ER Diagram](ERD.png)
