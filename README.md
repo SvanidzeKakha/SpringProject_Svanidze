@@ -13,177 +13,62 @@
 
 ## Поведінка системи та REST API ендпоінти
 
-### Реєстрація користувача
+## Поведінка системи
+
+##REST API EDNPOINTS
+#### Реєстрація
+
 - **Метод**: POST
 - **Ендпоінт**: `/api/users/register`
-- **Тіло запиту**:
-    ```json
-    {
-      "username": "string",
-      "password": "string",
-      "email": "string"
-    }
-    ```
-- **Відповідь**:
-    ```json
-    {
-      "message": "User registered successfully",
-      "userId": "number"
-    }
-    ```
+- **Параметри**: `username`, `password`, `email`
 
-### Авторизація користувача
+#### Авторизація
+
 - **Метод**: POST
 - **Ендпоінт**: `/api/users/login`
-- **Тіло запиту**:
-    ```json
-    {
-      "username": "string",
-      "password": "string"
-    }
-    ```
-- **Відповідь**:
-    ```json
-    {
-      "token": "string",
-      "userId": "number"
-    }
-    ```
+- **Параметри**: `username`, `password`
 
-### Пошук книг
+#### Пошук книг
+
 - **Метод**: GET
 - **Ендпоінт**: `/api/books/search`
-- **Параметри запиту**: `?query=string`
-- **Відповідь**:
-    ```json
-    {
-      "books": [
-        {
-          "id": "number",
-          "title": "string",
-          "author": "string",
-          "isbn": "string"
-        }
-      ]
-    }
-    ```
+- **Параметри**: `query`
 
-### Перегляд деталей книги
+#### Перегляд деталей книги
+
 - **Метод**: GET
 - **Ендпоінт**: `/api/books/{id}`
-- **Відповідь**:
-    ```json
-    {
-      "id": "number",
-      "title": "string",
-      "author": "string",
-      "description": "string",
-      "isbn": "string",
-      "publishedDate": "date"
-    }
-    ```
 
-### Створення запису книги
+#### Створення запису книги
+
 - **Метод**: POST
 - **Ендпоінт**: `/api/books`
-- **Тіло запиту**:
-    ```json
-    {
-      "title": "string",
-      "author": "string",
-      "description": "string",
-      "isbn": "string",
-      "publishedDate": "date"
-    }
-    ```
-- **Відповідь**:
-    ```json
-    {
-      "message": "Book created successfully",
-      "bookId": "number"
-    }
-    ```
+- **Параметри**: `title`, `author`, `description`, `isbn`, `publishedDate`
 
-### Редагування запису книги
+#### Редагування запису книги
+
 - **Метод**: PUT
 - **Ендпоінт**: `/api/books/{id}`
-- **Тіло запиту**:
-    ```json
-    {
-      "title": "string",
-      "author": "string",
-      "description": "string",
-      "isbn": "string",
-      "publishedDate": "date"
-    }
-    ```
-- **Відповідь**:
-    ```json
-    {
-      "message": "Book updated successfully"
-    }
-    ```
+- **Параметри**: `title`, `author`, `description`, `isbn`, `publishedDate`
 
-### Видалення запису книги
+#### Видалення запису книги
+
 - **Метод**: DELETE
 - **Ендпоінт**: `/api/books/{id}`
-- **Відповідь**:
-    ```json
-    {
-      "message": "Book deleted successfully"
-    }
-    ```
 
-### Резервування книги
+#### Резервування книги
+
 - **Метод**: POST
 - **Ендпоінт**: `/api/reservations`
-- **Тіло запиту**:
-    ```json
-    {
-      "userId": "number",
-      "bookId": "number",
-      "reservationDate": "date"
-    }
-    ```
-- **Відповідь**:
-    ```json
-    {
-      "message": "Book reserved successfully",
-      "reservationId": "number"
-    }
-    ```
+- **Параметри**: `userId`, `bookId`, `reservationDate`
 
-### Перегляд стану резервування
+#### Перегляд стану резервування
+
 - **Метод**: GET
 - **Ендпоінт**: `/api/reservations/{userId}`
-- **Відповідь**:
-    ```json
-    {
-      "reservations": [
-        {
-          "reservationId": "number",
-          "bookId": "number",
-          "status": "string"
-        }
-      ]
-    }
-    ```
 
-### Оцінка та відгуки на книги
+#### Оцінка та відгуки на книги
+
 - **Метод**: POST
 - **Ендпоінт**: `/api/reviews`
-- **Тіло запиту**:
-    ```json
-    {
-      "userId": "number",
-      "bookId": "number",
-      "rating": "number",
-      "review": "string"
-    }
-    ```
-- **Відповідь**:
-    ```json
-    {
-      "message": "Review submitted successfully"
-    }
-    ```
+- **Параметри**: `userId`, `bookId`, `rating`, `review`
