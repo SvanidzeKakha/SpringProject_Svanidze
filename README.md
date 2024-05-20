@@ -15,7 +15,7 @@
 
 ## Поведінка системи
 
-##REST API EDNPOINTS
+## REST API EDNPOINTS
 #### Реєстрація
 
 - **Метод**: POST
